@@ -65,6 +65,7 @@ int main(int argc, char *argv[]) {
   curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
   curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 0L);
   curl_easy_setopt(curl, CURLOPT_XFERINFOFUNCTION, progressCallback);
+  curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
   CURLcode res = curl_easy_perform(curl);
 
   curl_easy_cleanup(curl);
